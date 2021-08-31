@@ -1,7 +1,11 @@
-const index = () =>{
-  return(
-    <div>hello world</div>
-  )
-}
+import AppLayout from '../components/AppLayout';
 
-export default index
+const index = () => {
+  return (
+    <AppLayout>
+      <div>hello world</div>
+    </AppLayout>
+  );
+};
+
+export default index;
