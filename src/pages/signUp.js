@@ -44,8 +44,6 @@ const SignUp = () => {
 
   const submit = useCallback(() => {
     if (signUpInfo.password !== passwordError.confirmPassword) {
-      alert('비밀번호가 일치하지 않습니다');
-
       setPasswordError({
         ...passwordError,
         error: true
@@ -63,6 +61,8 @@ const SignUp = () => {
       </Head>
       <AppLayout>
         <Form onFinish={submit}>
+          <BlockingChromeAutoComplete type="text" name="userName" tabIndex={-1} />
+          <BlockingChromeAutoComplete type="password" name="password" tabIndex={-1} />
           <div>
             <label htmlFor="userName">닉네임</label>
             <br />
@@ -100,6 +100,11 @@ const SignUp = () => {
     </>
   );
 };
+
+const BlockingChromeAutoComplete = styled.input`
+  position: absolute;
+  top: -9999px;
+`;
 
 const ErrorMessage = styled.div`
   color: red;
