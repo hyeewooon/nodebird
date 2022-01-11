@@ -1,6 +1,6 @@
 {
   "parserOptions": {
-    "ecmaVersion": 2021,
+    "ecmaVersion": 12,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
@@ -9,7 +9,10 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true
+    "es2021": true
+  },
+  "rules": {
+    "react/prop-types": "off"
   },
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "plugins": ["import", "react", "react-hooks"]
