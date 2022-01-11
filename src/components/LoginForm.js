@@ -2,10 +2,13 @@ import React, { useState, useCallback } from 'react';
 import Link from 'next/link';
 import { Form, Input, Button } from 'antd';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 
 import useInput from '../../hooks/useInput';
+import { loginAction } from '../../reducers';
 
-const LoginForm = ({ setIsLoggedIn }) => {
+const LoginForm = () => {
+  const dispatch = useDispatch();
   const [loginInfo, setLoginInfo] = useState({
     id: '',
     password: ''
@@ -31,9 +34,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
   // );
 
   const submitForm = useCallback(() => {
-    const { id, password } = loginInfo;
-    console.log(id, password);
-    setIsLoggedIn(true);
+    dispatch(loginAction(loginInfo));
   }, [loginInfo]);
 
   return (
