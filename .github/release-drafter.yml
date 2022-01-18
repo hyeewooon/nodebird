@@ -1,5 +1,5 @@
-name-template: 'v$MAJOR.$MINOR.$PATCH'
-tag-template: 'v$MAJOR.$MINOR.$PATCH'
+name-template: 'v$NEXT_MINOR_VERSION'
+tag-template: 'v$NEXT_MINOR_VERSION'
 categories:
   - title: '🚀 Features'
     label: 'enhancement'
@@ -23,4 +23,3 @@ template: |
   ## What’s Changed
 
   $CHANGES
-  $PREVIOUS_TAG
